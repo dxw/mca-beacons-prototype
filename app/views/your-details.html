@@ -8,6 +8,24 @@
   Your details
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/"
+}) }}
+{{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Register a beacon",
+        href: "/"
+      },
+      {
+        text: "Your details"
+      }
+    ]
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
