@@ -1,0 +1,130 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Step 1 of 4</span>
+      <h1 class="govuk-heading-xl">
+        Your details
+        <span class="govuk-caption-xl"></span>
+      </h1>
+
+      <form action="beacon-type" method="post" class="form">
+
+      {{ govukInput({
+        label: {
+          text: "Your name"
+        },
+        id: "your-name",
+        name: "your-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone number"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is your address?",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        }
+      }) %}
+
+      {{ govukInput({
+          label: {
+            html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+          },
+          id: "address-line-1",
+          name: "address-line-1"
+        }) }}
+
+      {{ govukInput({
+          label: {
+            html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+          },
+          id: "address-line-2",
+          name: "address-line-2"
+        }) }}
+
+      {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-town",
+          name: "address-town"
+        }) }}
+
+      {{ govukInput({
+          label: {
+            text: "County"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-county",
+          name: "address-county"
+        }) }}
+
+      {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "address-postcode",
+          name: "address-postcode"
+        }) }}
+
+      {% endcall %}
+
+
+
+      <h2 class="govuk-heading-m">Emergency contact</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Emergency contact name"
+        },
+        id: "emergency-contact-name",
+        name: "emergency-contact-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Emergency contact telephone number"
+        },
+        id: "emergency-telephone-number",
+        name: "emergency-telephone-number",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-input--width-20"
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+</div>
+
+{% endblock %}

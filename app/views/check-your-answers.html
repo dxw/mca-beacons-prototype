@@ -1,0 +1,371 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers before registering your beacon
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">Check your answers before registering your beacon</h1>
+
+    <h2 class="govuk-heading-m">Your details</h2>
+
+    {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['your-name']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Telephone number"
+            },
+            value: {
+              text: data['telephone-number']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your address"
+            },
+            value: {
+              text: data['address-line-1']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Emergency contact name"
+            },
+            value: {
+              text: data['emergency-contact-name']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Emergency contact name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Emergency telephone number"
+            },
+            value: {
+              text: data['emergency-telephone-number']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Emergency telephone number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+    <h2 class="govuk-heading-m">Beacon details</h2>
+
+    {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Beacon type"
+            },
+            value: {
+              text: data['beacon-type']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Beacon type"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Hex ID"
+            },
+            value: {
+              text: data['hex-id']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Hex ID"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Manufacturer"
+            },
+            value: {
+              text: data['manufacturer']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Manufacturer"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Model"
+            },
+            value: {
+              text: data['model']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Model"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Serial number"
+            },
+            value: {
+              text: data['serial-number']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Serial number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Battery expiry"
+            },
+            value: {
+              text: data['battery-expiry-day'] + '/' + data['battery-expiry-month'] + '/' + data['battery-expiry-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Battery expiry"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Last serviced"
+            },
+            value: {
+              text: data['last-serviced-day'] + '/' + data['last-serviced-month'] + '/' + data['last-serviced-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Last serviced"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Vessel details</h2>
+
+    {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "MMSI"
+            },
+            value: {
+              text: data['mmsi']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "MMSI"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Vessel name"
+            },
+            value: {
+              text: data['vessel-name']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Vessel name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Callsign"
+            },
+            value: {
+              text: data['callsign']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Callsign"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Radio comms details"
+            },
+            value: {
+              text: data['radio-comms-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Radio comms details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Number of persons aboard"
+            },
+            value: {
+              text: data['number-of-persons-aboard']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Number of persons aboard"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Vessel type"
+            },
+            value: {
+              text: data['vessel-type']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Vessel type"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    <h2 class="govuk-heading-m">Now send your registration</h2>
+
+    <p class="govuk-body">By submitting this registration you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+    <form action="/form-handler" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

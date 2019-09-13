@@ -1,0 +1,106 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Vessel details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Step 4 of 4</span>
+      <h1 class="govuk-heading-xl">
+        Vessel details
+        <span class="govuk-caption-xl"></span>
+      </h1>
+
+      <form action="check-your-answers" method="post" class="form">
+
+      {{ govukInput({
+        label: {
+          text: "MMSI"
+        },
+        id: "mmsi",
+        name: "mmsi"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Vessel name"
+        },
+        id: "vessel-name",
+        name: "vessel-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Callsign"
+        },
+        id: "callsign",
+        name: "callsign"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Radio comms details"
+        },
+        id: "radio-comms-details",
+        name: "radio-comms-details"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Number of persons aboard"
+        },
+        id: "number-of-persons-aboard",
+        name: "number-of-persons-aboard"
+      }) }}
+
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+      {{ govukSelect({
+        id: "vessel-type",
+        name: "vessel-type",
+        label: {
+          text: "Vessel type"
+        },
+        items: [
+          {
+            value: "Merchant",
+            text: "Merchant",
+            selected: true
+          },
+          {
+            value: "Pleasure",
+            text: "Pleasure"
+          },
+          {
+            value: "Fishing",
+            text: "Fishing"
+          },
+          {
+            value: "Commercial pleasure yacht",
+            text: "Commercial pleasure yacht"
+          },
+          {
+            value: "Other",
+            text: "Other"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Beacon details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Step 3 of 4</span>
+      <h1 class="govuk-heading-xl">
+        Beacon details
+        <span class="govuk-caption-xl"></span>
+      </h1>
+
+      <form action="vessel-details" method="post" class="form">
+
+      {{ govukInput({
+        label: {
+          text: "Hex ID"
+        },
+        id: "hex-id",
+        name: "hex-id"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Manufacturer"
+        },
+        id: "manufacturer",
+        name: "manufacturer"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Model"
+        },
+        id: "model",
+        name: "model"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Serial number"
+        },
+        id: "serial-number",
+        name: "serial-number"
+      }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "battery-expiry",
+        namePrefix: "battery-expiry",
+        fieldset: {
+          legend: {
+            text: "Battery expiry",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "last-serviced",
+        namePrefix: "last-serviced",
+        fieldset: {
+          legend: {
+            text: "Last serviced",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+</div>
+
+{% endblock %}
