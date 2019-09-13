@@ -30,6 +30,22 @@
 
       {{ govukInput({
         label: {
+          text: "Email address"
+        },
+        hint: {
+          text: "We’ll only use this to send you a confirmation of your registration"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
+        attributes: {
+          spellcheck: "false"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
           text: "Telephone number"
         },
         id: "telephone-number",
