@@ -1,0 +1,361 @@
+
+{% extends "layout.html" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% macro address(line1, line2, line3) %}
+  <span>{{line1}}<br>{{line2}}<br>{{line3}}</span>
+{% endmacro %}
+
+{% block pageTitle %}
+  Beacon: c600745a82d2883
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "beacons-list-uploaded"
+}) }}
+{# {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Register a beacon",
+      href: "/"
+    },
+    {
+      text: "Vessel details"
+    }
+  ]
+}) }} #}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Beacon: c600745a82d2883</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Beacon details</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Hex ID"
+          },
+          value: {
+            text: "c600745a82d2883"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Type"
+          },
+          value: {
+            text: "EPIRB"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Manufacturer"
+          },
+          value: {
+            text: "Ocean Signal"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Model"
+          },
+          value: {
+            text: "Ocean Signal rescueME EPIRB1 (Cat2)"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Serial number"
+          },
+          value: {
+            text: "d265168a9826"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Battery expiry"
+          },
+          value: {
+            text: "13 Jan 2020"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Battery expiry"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Last serviced"
+          },
+          value: {
+            text: "20 Aug 2019"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Last serviced"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Vessel details</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "MMSI"
+          },
+          value: {
+            text: "965866253"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Vessel name"
+          },
+          value: {
+            text: "The Hoxton"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Callsign"
+          },
+          value: {
+            text: "HXTN-173"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Radio comms details"
+          },
+          value: {
+            text: "VHF"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Radio comms details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Number of persons aboard"
+          },
+          value: {
+            text: "6"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Number of persons aboard"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Vessel type"
+          },
+          value: {
+            text: "Fishing"
+          },
+          actions: {
+            items: [
+
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Registrant details</h2>
+
+    {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Jane Doe"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "janedoe@boatcompany.co.uk"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Email"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Telephone number"
+            },
+            value: {
+              text: "07564 463 8743"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your address"
+            },
+            value: {
+              text: address("12 Sycamore Rd", "Southampton", "SO14 0AL")
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Emergency contact name"
+            },
+            value: {
+              text: "Jonathan Doe"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Emergency contact name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Emergency telephone number"
+            },
+            value: {
+              text: "07845 766 9834"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Emergency telephone number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+  </div>
+
+</div>
+{% endblock %}
