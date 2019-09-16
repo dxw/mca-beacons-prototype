@@ -5,66 +5,19 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-  Register a beacon
+  MCA Beacons: alpha recommendations
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Register a beacon</h1>
+    <h1 class="govuk-heading-xl">MCA Beacons: alpha recommendations</h1>
 
-    <p class="govuk-body">Use this service to:</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Register an Emergency Position Indicating Radio Beacons (EPIRBs) for ships and boats</li>
-      <li>Register an Emergency Locator Transmitters (ELTs) for aircraft</li>
-      <li>Register a Personal Locator Beacons (PLBs) for personal use</li>
+    <ul class="govuk-list">
+      <li><a class="govuk-link" href="register">User journey: Register a beacon</a></li>
     </ul>
 
-    <p class="govuk-body">Registering is free and takes around 5 minutes.</p>
-
-    {{ govukButton({
-        text: "Start now",
-        href: "your-details",
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
-        isStartButton: true
-      }) }}
-
-    <h2 class="govuk-heading-m">Before you start</h2>
-    <p class="govuk-body">Have your personal details to hand.</p>
-    <p class="govuk-body">Have the details of your beacon to hand.</p>
-    <p class="govuk-body">Have the details of your vessel, aircraft or structure to hand.</p>
   </div>
 
-  <div class="govuk-grid-column-one-third">
-
-    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
-
-    <!-- <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a class="govuk-link" href="#">
-                Related link
-              </a>
-          </li>
-          <li>
-            <a class="govuk-link" href="#">
-                Related link
-              </a>
-          </li>
-          <li>
-            <a href="#" class="govuk-link govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-          </li>
-        </ul>
-      </nav>
-    </aside> -->
-
-  </div>
 </div>
 {% endblock %}
