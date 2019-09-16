@@ -1,0 +1,158 @@
+
+{% extends "layout.html" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+  Your beacons
+{% endblock %}
+
+{% block beforeContent %}
+{# {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Register a beacon",
+      href: "/"
+    },
+    {
+      text: "Vessel details"
+    }
+  ]
+}) }} #}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Your beacons</h1>
+
+    {% if data['sign-in-email'] %}
+      <p>Signed in as {{ data['sign-in-email'] }}</p>
+    {% endif %}
+
+    {{ govukTable({
+      caption: "Beacons registered to Boat Company Ltd",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Hex ID"
+        },
+        {
+          text: "Vessel type"
+        },
+        {
+          text: "Vessel name"
+        },
+        {
+          text: "Actions"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "<a href='#'>5613f1f9ffd7fc4</a>"
+          },
+          {
+            text: "Merchant"
+          },
+          {
+            text: "Bright Oleander"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>bdf94173bfac4a5</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "Red Beech"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>882e4073d6be734</a>"
+          },
+          {
+            text: "Merchant"
+          },
+          {
+            text: "Egremont Castle"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>f7c7406fa35415f</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "The Good Hope"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>dc04672d8b72abc</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "The Roebuck"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>374f904652037ab</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "Edmundston"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>c600745a82d2883</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "The Halstead"
+          },
+          {
+            html: "<a href='#'>View details</a>"
+          }
+        ]
+      ]
+    }) }}
+
+
+
+  </div>
+
+</div>
+{% endblock %}
