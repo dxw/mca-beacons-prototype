@@ -20,3 +20,8 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-width-container-notify {
   max-width: 680px;
 }
+
+.govuk-tag-pending {
+  background-color: govuk-colour("yellow");
+  color: $govuk-text-colour;
+}
