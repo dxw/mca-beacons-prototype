@@ -6,7 +6,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-  Your beacons
+  Registrations awaiting approval
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,29 +25,28 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Your beacons</h1>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Registrations awaiting approval</h1>
   </div>
-  <div class="govuk-grid-column-one-third">
+  {# <div class="govuk-grid-column-one-third">
     {{ govukButton({
       text: "Bulk upload beacon details",
       href: "upload"
     }) }}
-  </div>
+  </div> #}
 </div>
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if data['sign-in-email-public'] %}
-      <p>Signed in as {{ data['sign-in-email-public'] }}</p>
+    {% if data['sign-in-email-mca'] %}
+      <p>Signed in as {{ data['sign-in-email-mca'] }}</p>
     {% endif %}
 
     {{ govukTable({
-      caption: "Beacons registered to Boat Company Ltd",
-      captionClasses: "govuk-heading-m",
       firstCellIsHeader: true,
+      captionClasses: "govuk-heading-m",
       head: [
         {
           text: "Hex ID"
@@ -80,7 +79,7 @@
             text: "10 Jun 2019"
           },
           {
-            html: "<a href='#'>View details</a>"
+            html: "<a href='#'>Review</a>"
           }
         ],
         [
@@ -97,7 +96,7 @@
             text: "23 Jul 2019"
           },
           {
-            html: "<a href='#'>View details</a>"
+            html: "<a href='#'>Review</a>"
           }
         ],
         [
@@ -114,7 +113,75 @@
             text: "1 Aug 2019"
           },
           {
-            html: "<a href='#'>View details</a>"
+            html: "<a href='#'>Review</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>f7c7406fa35415f</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "The Good Hope"
+          },
+          {
+            text: "16 Sept 2019"
+          },
+          {
+            html: "<a href='#'>Review</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>dc04672d8b72abc</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "The Roebuck"
+          },
+          {
+            text: "16 Sept 2019"
+          },
+          {
+            html: "<a href='#'>Review</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>374f904652037ab</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "Edmundston"
+          },
+          {
+            text: "16 Sept 2019"
+          },
+          {
+            html: "<a href='#'>Review</a>"
+          }
+        ],
+        [
+          {
+            html: "<a href='hoxton'>c600745a82d2883</a>"
+          },
+          {
+            text: "Fishing"
+          },
+          {
+            text: "The Hoxton"
+          },
+          {
+            text: "16 Sept 2019"
+          },
+          {
+            html: "<a href='beacon-mca'>Review</a>"
           }
         ]
       ]

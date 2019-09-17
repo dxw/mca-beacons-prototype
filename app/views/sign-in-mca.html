@@ -6,7 +6,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-  Sign in to view your beacons
+  Sign in to manage beacon registrations
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,16 +26,16 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sign in to view your beacons</h1>
+    <h1 class="govuk-heading-xl">Sign in to manage beacon registrations</h1>
 
-    <form action="beacons-list" method="post" class="form">
+    <form action="beacons-list-mca" method="post" class="form">
 
       {{ govukInput({
         label: {
           text: "Email address"
         },
-        id: "sign-in-email",
-        name: "sign-in-email"
+        id: "sign-in-email-mca",
+        name: "sign-in-email-mca"
       }) }}
 
       {{ govukInput({

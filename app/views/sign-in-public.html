@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Sign in to view your beacons
+{% endblock %}
+
+{% block beforeContent %}
+{# {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Register a beacon",
+      href: "/"
+    },
+    {
+      text: "Vessel details"
+    }
+  ]
+}) }} #}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Sign in to view your beacons</h1>
+
+    <form action="beacons-list" method="post" class="form">
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "sign-in-email-public",
+        name: "sign-in-email-public"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Password"
+        },
+        id: "sign-in-password",
+        name: "sign-in-password",
+        type: "password"
+      }) }}
+
+      {{ govukButton({
+        text: "Sign in"
+      }) }}
+
+    </form>
+
+
+
+  </div>
+
+</div>
+{% endblock %}

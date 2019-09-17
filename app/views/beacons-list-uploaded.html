@@ -40,8 +40,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if data['sign-in-email'] %}
-      <p>Signed in as {{ data['sign-in-email'] }}</p>
+    {% if data['sign-in-email-public'] %}
+      <p>Signed in as {{ data['sign-in-email-public'] }}</p>
     {% endif %}
 
     {{ govukTable({
@@ -182,7 +182,7 @@
             text: "16 Sept 2019"
           },
           {
-            html: "<a href='hoxton'>View details</a>"
+            html: "<a href='beacon-public'>View details</a>"
           }
         ]
       ]

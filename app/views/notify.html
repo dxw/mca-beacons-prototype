@@ -1,0 +1,41 @@
+
+{% extends "layout-notify.html" %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Request for further info
+{% endblock %}
+
+{% block main %}
+<div class="govuk-width-container govuk-width-container-notify govuk-!-padding-top-7 govuk-!-padding-bottom-9">
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <p class="govuk-body govuk-!-font-weight-bold">Beacon registration for hex ID: c600745a82d2883</p>
+
+      <p class="govuk-body">Hello Jane,</p>
+
+      <p class="govuk-body">We need more information from you to complete the registration of your beacon with hex ID <strong>c600745a82d2883</strong>.</p>
+
+      <p class="govuk-body">Please reply to this email with more information on the following:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Manufacturer</li>
+        <li>Serial number</li>
+      </ul>
+
+      <p class="govuk-body">Thank you,</p>
+      <p class="govuk-body">The Maritime & Coastguard Agency</p>
+
+    </div>
+
+  </div>
+  {% endblock %}
+<div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
